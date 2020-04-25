@@ -1,17 +1,23 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   #GET /resource/sign_up
-  #def new
-  #  super 
-  #end
+
+  def new
+    super
+    @user = User.new 
+  end
 
   def create
-    binding.pry
-    redirect_to :root
+    @user = User.new(registration_params)
+    if @user.save
+       redirect_to new_user_session_path, success:'登録完了'
+    else
+       render :new
+    end
   end
 
   # GET /resource/edit
@@ -39,6 +45,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
+
+  def registration_params
+    params.require(:user).permit(:user_name, :email, :password, :password_confirmation)
+  end
 
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
