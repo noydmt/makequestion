@@ -5,4 +5,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions' 
   }
+  
+  devise_scope :user do
+    root to: "users/sessions#new", as: :new_login
+    get "signup", :to =>"users/registrations#new", as: :new_signup
+  end
+
 end
