@@ -1,4 +1,2 @@
 <h2>マイページ</h2>
-<% if user_signed_in? %>
-  <%= current_user.email %>
-<% end %>
+  <%= current_user.email if user_signed_in? %>
