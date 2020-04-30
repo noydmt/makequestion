@@ -61,8 +61,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   def sign_up(resource_name, resource)
-    if current_user
-      sign_in(resource_name, resource)
-    end
+    true
   end
 end
