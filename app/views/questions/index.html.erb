@@ -1,2 +1,16 @@
 <h2>マイページ</h2>
-  <%= current_user.email if user_signed_in? %>
+  <% if user_signed_in? %>
+    <%= current_user.id %><br>
+    <%= current_user.user_name %><br>
+    <%= current_user.email %><br>
+  <% end %>
+  <div>
+    <%= link_to "新規作成", new_question_path %>
+  </div>
+  <div>
+    <% @questions.each do |question| %>
+      <br><%= question.id %>: <%= question.content %>
+      <%= link_to "回答一覧", question_path(question) %>
+      <%= link_to "削除", question_path(question), method: :delete %>
+    <% end %>
+  </div>

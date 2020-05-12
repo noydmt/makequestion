@@ -11,12 +11,14 @@
 
   <body>
     <% if user_signed_in? %>
+      <%= link_to "ホーム", questions_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% end %>
-    <div class="flash">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
+
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+   
     <%= yield %>
   </body>
   <script>

@@ -1,0 +1,15 @@
+<h2>新規作成</h2>
+
+<div>
+  <%= form_for @question do |f| %>
+    <%= f.label :content%><br>
+    <%= f.text_area :content %>
+    <%= f.submit "作成" %>
+  <% end %>
+</div>
+
+<div>
+  <% @questions.each do |question| %>
+    <br><%= question.content %>
+  <% end %>
+</div>
