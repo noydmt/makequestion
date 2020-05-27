@@ -1,16 +1,27 @@
-<h2>マイページ</h2>
+<div class="home-title">
+  <h2>マイページ</h2>
+</div>
   <% if user_signed_in? %>
-    <%= current_user.id %><br>
-    <%= current_user.user_name %><br>
-    <%= current_user.email %><br>
+    <div class="user-name">
+      <p><span>お名前: </span><%= current_user.user_name %></p>
+    </div>
   <% end %>
-  <div>
-    <%= link_to "新規作成", new_question_path %>
+  <div class="sub-menu">
+    <div class="create-question">
+      <%= link_to "", new_question_path, { class: "make-question fas fa-edit" } %>
+    </div>
+    <div class="create-email">
+      <%= link_to "",new_question_path, { class: "make-email fas fa-envelope" } %>
+    </div>
   </div>
-  <div>
+  <div class="question-list">
     <% @questions.each do |question| %>
-      <br><%= question.id %>: <%= question.content %>
-      <%= link_to "回答一覧", question_path(question) %>
-      <%= link_to "削除", question_path(question), method: :delete %>
+      <div class="question">
+        <p class="content"><%= question.content %></p>
+        <div class="answer_delete">
+          <p class="answers"><%= link_to "回答", question_path(question), { class: "answer-button" } %></p>
+          <p class="delete"><%= link_to "削除", question_path(question),{ method: :delete, class: "delete-button" } %></p>
+        </div>
+      </div>
     <% end %>
   </div>

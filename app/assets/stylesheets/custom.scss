@@ -1,0 +1,567 @@
+h1, h2 {
+  font-weight: 100;
+}
+
+.login_page {
+  display: flex;
+  width: 960px;
+}
+
+.discription {
+  width: 350px;
+  height: 470px;
+  margin-left: 150px;
+  font-size: 30px;
+}
+
+.session_box {
+  width: 360px;
+  position: relative;
+}
+
+.make_question {
+  display: block;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  margin-left: 150px;
+  margin-right: 0;
+  font-size: 50px;
+  width: 350px;
+}
+
+.title_in_menu {
+  font-size: 28px;
+  width: 300px;
+  margin-top: 10px;
+  margin-left: 20px;
+  color: white;
+}
+
+.title_in_menu:hover {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  z-index: 1;
+  background-color: rgba(30,20,70,.1);
+}
+
+.alert {
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  padding: 15px 20px;
+  z-index: 10000;
+  background-color: white;
+}
+
+.menu-bar {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  background-color: rgba(30,20,70,1);
+}
+
+.menu-home {
+  margin-top: 18px;
+  margin-left: 57%;
+  margin-bottom: 10px;
+}
+
+.menu-logout{
+  margin-top: 18px;
+  margin-left: 45px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.fa-sign-out-alt {
+  color: white;
+  font-size: 24px;
+  transition: font-size .5s, margin-top .3s;
+}
+
+.fa-sign-out-alt:hover {
+  text-decoration: none;
+  font-size: 26px;
+  color: white;
+}
+
+.fa-home {
+  color: white;
+  font-size: 24px;
+  transition: font-size .5s, margin-top .3s;
+}
+
+.fa-home:hover {
+  text-decoration: none;
+  font-size: 26px;
+  color: white;
+}
+
+.home-title {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.user-name {
+  text-align: center;
+}
+
+.sub-menu {
+  display: flex;
+}
+
+.create-question {
+  background-color: rgba(20,60,90,0);
+  text-align: center;
+  position: relative;
+  left: 65%;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-edit {
+  width: 27px;
+  font-size: 27px;
+  color: rgba(30,20,70,1);
+  transition: font-size .5s, margin-top .3s;
+}
+
+.fa-edit:hover {
+  text-decoration: none;
+  font-size: 29px;
+  color: rgba(30,20,70,1);
+}
+
+.create-email {
+  background-color: rgba(20,60,90,0);
+  text-align: center;
+  position: relative;
+  left: 65%;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-envelope {
+  width: 27px;
+  font-size: 27px;
+  color: rgba(30,20,70,1);
+  transition: font-size .5s, margin-top .3s;
+}
+
+.fa-envelope:hover {
+  text-decoration: none;
+  font-size: 29px;
+  color: rgba(30,20,70,1);
+}
+
+.question {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.answer_delete {
+  display: flex;
+}
+
+.content {
+  background-color: white;
+  width: 450px;
+  height: 60px;
+  text-align: left;
+  border-radius: 5px;
+  word-break: break-all;
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+
+.answers {
+  width: 70px;
+  height: 60px;
+  margin-top: 0px;
+  padding: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-button {
+  color: rgba(30,20,70,1);
+  width: 50px;
+  height: 30px;
+  display:block;
+  text-align: center;
+  margin: auto 10px;;
+  font-size:20px;
+  border-radius: 2px;
+  border: 1px solid rgba(30,20,70,1);
+}
+
+.answer-button:hover {
+  color: rgba(30,20,70,1);
+  text-decoration: none;
+}
+
+.delete {
+  width: 70px;
+  height: 60px;
+  margin-top: 0px;
+  padding: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-button {
+  color: white;
+  background-color: rgba(30,20,70,1);
+  width: 50px;
+  height: 30px;
+  display:block;
+  text-align: center;
+  margin: auto 10px;;
+  font-size:20px;
+  border-radius: 2px;
+}
+
+.delete-button:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.question-list {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px auto;
+  width: 70%;
+}
+
+.form-all {
+  display: flex;
+  margin-top: 60px;
+}
+
+.form-input {
+  width: 400px;
+}
+
+.new-questions-list {
+  margin-left: 40px;
+}
+
+.form-label {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.form-content {
+  display: block;
+  width: 350px;
+  height: 60px;
+  margin: 0px auto;
+}
+
+.form-question {
+  display: block;
+  margin-top: 10px;
+  margin-left: 80%;
+
+
+  color: rgba(30,20,70,1);
+  width: 65px;
+  height: 47px;
+  font-size:20px;
+  border-radius: 2px;
+  border: 1px solid rgba(30,20,70,1);
+}
+
+.new-questions-list {
+  width: 900px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x:hidden;
+  overflow-y:scroll;
+  border: 1px solid rgba(30,20,70,1);
+  border-radius: 2px;
+}
+
+.new-questions {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.session-title {
+  position: absolute;
+  top: 35%;
+  left: 70%;
+  margin-top: 70px;
+}
+
+.session-form {
+  position: absolute;
+  top: -150px;
+  padding-right: auto;
+  padding-left: auto;
+  margin-left: 100px;
+  margin-right: 50px;
+  margin-bottom: 110px;
+  width: 350px;
+  height: 470px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(30,20,70,1);
+}
+
+input#user_user_name {
+  width:250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input#user_password_confirmation {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:250px;
+}
+
+input#user_email {
+  width:250px;
+}
+
+input#user_password {
+  width:250px;
+}
+
+.session-label {
+  margin-bottom: 0;
+}
+
+input#user_email {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input#user_password {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.field_remember {
+  width: 140px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.actions {
+  width: 170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login_submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.field_email {
+  margin-top: 60px;
+}
+
+.field_password {
+  margin-top: 30px;
+}
+
+.session-label {
+  text-align: center;
+  color: white;
+}
+
+.links {
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+
+.links a {
+  color: white;
+}
+
+.registration {
+  width: 135px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.registration_btn {
+  width: 100px;
+  display: block;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.entire_registration {
+  width: 500px;
+  margin-top: 60px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form_registration {
+  margin-top: 40px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 350px;
+  height: 470px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgba(30,20,70,1);
+}
+
+.field_name {
+  margin-top: 50px;
+}
+
+.field_other {
+  margin-top: 25px;
+}
+
+@media screen and (max-width:768px) {
+
+  .question {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  .content {
+    background-color: white;
+    width: 300px;
+    height: 60px;
+    text-align: left;
+    border-radius: 5px;
+    word-break: break-all;
+  }
+
+  .answer_delete {
+    position: relative;
+    width: 300px;
+    height: 50px;
+  }
+  
+  .answer-button {
+    position: absolute;
+    top: 0px;
+    left: 170px;
+    margin-top: 0px;
+  }
+  
+  .delete-button {
+    position: absolute;
+    top: 0px;
+    left: 230px;
+    margin-top: 0px;
+  }
+  
+  .form-all {
+    display: block;
+    margin-top: 60;
+  } 
+  
+  .new-questions-list {
+    width: 450px;
+    display: block;
+    margin: 10px auto 100px;
+  }
+
+  .form {
+    width: 400px;
+    margin: auto;
+  }
+  
+  .form-input {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content {
+    overflow-x:hidden;
+    overflow-y:scroll;
+  }
+  
+  .new-questions-list {
+    overflow-x:hidden;
+    overflow-y:scroll;
+  }
+ 
+  .discription {
+    font-size: 12px;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 350px;
+    height: 200px;
+  }
+
+  .make_question {
+    display: none;
+  }
+ 
+  .session-form {
+    width: 370px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .login_page {
+    position: relative;
+    display: block;
+  }  
+
+  .session_box {
+    position: absolute;
+    margin-left: 50px;
+  }
+ 
+  .menu-bar {
+    width: 100%;
+  }
+
+  .title_in_menu {
+    width: 58px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 30px;
+  }
+}
