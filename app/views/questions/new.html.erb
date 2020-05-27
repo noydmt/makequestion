@@ -1,15 +1,25 @@
-<h2>新規作成</h2>
-
-<div>
-  <%= form_for @question do |f| %>
-    <%= f.label :content%><br>
-    <%= f.text_area :content %>
-    <%= f.submit "作成" %>
-  <% end %>
+<div class="home-title">
+  <h2>新規作成</h2>
 </div>
 
-<div>
-  <% @questions.each do |question| %>
-    <br><%= question.content %>
-  <% end %>
+<div class="form-all">
+  <div class="form-input" >
+    <%= form_for @question do |f| %>
+      <div class="form">
+        <p class="form-label"><%= f.label :投稿%></p>
+        <%= f.text_area :content, { class: "form-content" } %>
+        <%= f.submit "作成" , { class: "form-question" }%>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="new-questions-list">
+    <% @questions.each do |question| %>
+      <div class="new-questions">
+        <li><%= question.content %></li>
+      </div>
+    <% end %>
+  </div>
+
 </div>
+

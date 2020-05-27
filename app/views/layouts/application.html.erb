@@ -7,23 +7,37 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "ホーム", questions_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% end %>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
 
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-   
-    <%= yield %>
+      <div class="menu-bar">
+        <%= link_to "Make Question", new_user_session_path, class: "title_in_menu" %>
+        <% if user_signed_in? %>
+        <div class="menu-home">
+          <%= link_to "", questions_path, { class: "fas fa-home" } %>
+        </div>
+        <div class="menu-logout">
+          <%= link_to "", destroy_user_session_path, { method: :delete, class: "fas fa-sign-out-alt" } %>
+        </div>
+        <% end %>
+      </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
+
   <script>
-  $(function(){
-    $('.notice').fadeOut(3000);
+    $(function(){
+    $('.alert').fadeOut(3000);
   });
   </script>
+
 </html>
