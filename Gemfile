@@ -20,6 +20,8 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'config'
 gem 'jquery-rails'
+gem 'bootstrap'
+gem 'bootstrap-sass'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
