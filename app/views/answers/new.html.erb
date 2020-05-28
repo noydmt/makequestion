@@ -1,0 +1,10 @@
+<div class="answer_form">
+  <form accept-charset="UTF-8" action="/answer" method="post">
+    <% @questions.each do |question| %>
+      <p><%= question.id %></p>
+      <p><%= question.content %></p>
+      <textarea name=answer[<%= question.id %>] id=<%= question.id %> ></textarea>
+    <% end %>
+    <input name="commit" type="submit" value="answers">
+  </form>
+</div>
