@@ -1,0 +1,8 @@
+<%= form_for @answer, url: {action: "create"} do |f| %>
+
+<%= f.submit "作成" , { class: "form-question" }%>
+<% @questions.each do |question| %>
+  <p><%= question.id %>: <%= question.content %></p>
+  <textarea name = answer[<%= question.id %>] required></textarea>
+<% end %>
+<% end %>
