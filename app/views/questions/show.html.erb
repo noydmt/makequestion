@@ -1,1 +1,7 @@
-<h2>回答一覧</2>
+<h2>回答一覧</h2>
+
+<p><%= @question.content %></p>
+
+<% @answers.each do |answer| %>
+  <p><%= answer.content %></p>
+<% end %>
