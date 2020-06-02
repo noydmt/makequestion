@@ -1,0 +1,7 @@
+<%= form_for @email do |f| %>
+  <p><%= f.label :宛先 %></p>
+  <% 5.times do |num| %>
+    <p><input type = "text" name = email[<%= num %>] ></p>
+  <% end %>
+  <%= f.submit "送信" %>
+<% end %>
