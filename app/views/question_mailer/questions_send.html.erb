@@ -1,0 +1,6 @@
+<%= @fromUser.email %> さんから質問が送られました。
+下記のリンクをクリックして質問に答えてください。
+
+<%= link_to "回答する", new_answer_url(@fromUser) %>
+
+<%= link_to "トップページ", root_url %>
