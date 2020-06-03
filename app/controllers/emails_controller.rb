@@ -2,29 +2,30 @@ class EmailsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @email = Email.new
+    @emails = Form::EmailCollection.new
   end
 
   def create
-    5.times do |num|
-      strNum = num.to_s
-      val = email_params[strNum]
-      binding.pry
-      if val.include?("@") && hankaku?(val)
-        binding.pry
-        @email = Email.create(user_id: current_user.id, email: val)
-        binding.pry
-      else
-        @email = Email.new(email: val)
-        redirect_to new_email_path and return
+    @emails = Form::EmailCollection.new(email_params)
+    @emails.collection.each do |email|
+
+      if hankaku?(email[:email]) && email[:email].include?("@")
+        @emails.collection = email
       end
+
     end
-    redirect_to root_path, notice: '完了'
+
+    if @emails.save
+      redirect_to root_path, notice: '#{}件に送信完了'
+    else
+      flash.now[:notice] = 'メールアドレスが不正です。'
+      render :new
+    end
   end
 
   private
   def email_params
-    params.require(:email)
+    params.require(:emails)
   end
 
   def hankaku?(str)
