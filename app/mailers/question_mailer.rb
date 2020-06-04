@@ -6,6 +6,7 @@ class QuestionMailer < ApplicationMailer
     @toUser = to_user
     mail from: 'noreply@gmail.com',
          to: to_user.email,
+         cc: from_user.email,
          subject: "please answer the question."
   end
 end

@@ -1,7 +1,8 @@
-<h2>回答一覧</h2>
+<div class="entire_question_show">
+  <h2 class="question_show_title">回答一覧</h2>
 
-<p><%= @question.content %></p>
-
-<% @answers.each do |answer| %>
-  <p><%= answer.content %></p>
-<% end %>
+  <p class="question_show_question"><%= @question.content %></p>
+  <% @answers.each do |answer| %>
+    <p class="content show_content"><%= answer.content %></p>
+  <% end %>
+</div>
