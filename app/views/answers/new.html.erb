@@ -6,6 +6,7 @@
         <div class="question_and_box">
           <p class="question_content">・<%= question.content %></p>
           <textarea class="answer_textarea" name = answer[<%= question.id %>] required></textarea>
+          <input type="hidden" name = user_id value = <%= question.user_id %> >
         </div>
       <% end %>
     </div>

@@ -4,13 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  has_many :questions
-  has_many :emails
+  has_many :questions, dependent: :destroy
+  has_many :emails, dependent: :destroy
 
   private
     def set_id
       while self.id.blank? || User.find_by(id: self.id).present? do
-        self.id = SecureRandom.random_number(1 << 64)
+        self.id = SecureRandom.random_number(1 << 32)
       end
     end
 end

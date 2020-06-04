@@ -6,8 +6,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    userId = current_user.id
-    @questions = Question.where(user_id:userId)
+    @questions = Question.where(user_id: params[:user_id])
     for question in @questions do
       id = (question.id).to_s
       new_answer = answer_params[id]
