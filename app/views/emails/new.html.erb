@@ -1,12 +1,28 @@
-<%= form_with model: @emails, url: emails_path, local: true do |form| %>
-  <% @emails.collection.each do |email| %>
-    <%= fields_for 'emails[]', email do |field| %>
-      <p><%= field.label :email %></p>
-      <p><%= field.text_field :email %></p>
-      <%= field.hidden_field :user_id , :value => current_user.id %>
+<div class="entire_email_page">
+  <div class="email_form">
+    <p class="email_page_title">送信宛先</p>
+    <p class="email_discription">※1度に最大5件まで送信できます</p>
+    
+    <%= form_with model: @emails, url: emails_path, local: true do |form| %>
+      <% @emails.collection.each do |email| %>
+        <%= fields_for 'emails[]', email do |field| %>
+          <div class="input_email_field">
+            <%= field.email_field :email, { class: "input_email", :placeholder => "example@org.com" } %>
+          </div>
+          <%= field.hidden_field :user_id , :value => current_user.id %>
+        <% end %>
+      <% end %>
+      <div>
+        <%= form.submit "送信" , { class: "send_email_submit" }%>
+      </div>
     <% end %>
-  <% end %>
-  <div>
-    <%= form.submit %>
   </div>
-<% end %>
+  <div>
+    <p class="past_email_discription">過去に送信したメールアドレス</p>
+    <div class="past_emails">
+      <% @past_emails.each do |past_email| %>
+        <p class="past_email"><%= past_email.email %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

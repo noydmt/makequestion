@@ -1,8 +1,18 @@
 <%= form_for @answer, url: {action: "create"} do |f| %>
+  <div class="entire_answer_page">
 
-<%= f.submit "作成" , { class: "form-question" }%>
-<% @questions.each do |question| %>
-  <p><%= question.id %>: <%= question.content %></p>
-  <textarea name = answer[<%= question.id %>] required></textarea>
-<% end %>
+    <div class="questions_to_answer">
+      <% @questions.each do |question| %>
+        <div class="question_and_box">
+          <p class="question_content">・<%= question.content %></p>
+          <textarea class="answer_textarea" name = answer[<%= question.id %>] required></textarea>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="button_to_answer">
+      <%= f.submit " 回 答 " , { class: "answer_form_button" } %>
+    </div>
+
+  </div>
 <% end %>
