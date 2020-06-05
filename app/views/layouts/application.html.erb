@@ -25,6 +25,9 @@
         <div class="menu-logout">
           <%= link_to "", destroy_user_session_path, { method: :delete, class: "fas fa-sign-out-alt" } %>
         </div>
+        <div class="menu-destroy">
+          <%= link_to "", user_registration_path, { method: :delete, class: "fas fa-sign-out-alt" } %>
+        </div>
         <% end %>
       </div>
 
