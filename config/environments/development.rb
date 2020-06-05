@@ -62,7 +62,11 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
   # host にはドメイン(host)が入る=> 開発環境なのでlocalhost のport番号が3000番
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: 'https://dmtmakequestion.herokuapp.com/' }
+
 
    config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
