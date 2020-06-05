@@ -19,15 +19,17 @@
       <div class="menu-bar">
         <%= link_to "Make Question", root_path, class: "title_in_menu" %>
         <% if user_signed_in? %>
-        <div class="menu-home">
-          <%= link_to "", questions_path, { class: "fas fa-home" } %>
-        </div>
-        <div class="menu-logout">
-          <%= link_to "", destroy_user_session_path, { method: :delete, class: "fas fa-sign-out-alt" } %>
-        </div>
-        <div class="menu-destroy">
-          <%= link_to "", user_registration_path, { method: :delete, class: "fas fa-sign-out-alt" } %>
-        </div>
+          <div class="sub-menu-bar">
+            <div class="menu-home">
+              <%= link_to "ホーム", questions_path, { class: "home-alt" } %>
+            </div>
+            <div class="menu-logout">
+              <%= link_to "ログアウト", destroy_user_session_path, { method: :delete, class: "sign-out-alt" } %>
+            </div>
+            <div class="menu-logout">
+              <%= link_to "退会", user_registration_path, { method: :delete, class: "sign-out-alt alert-out" } %>
+            </div>
+          </div>
         <% end %>
       </div>
 
@@ -40,6 +42,8 @@
   <script>
     $(function(){
     $('.alert').fadeOut(3000);
+    
+    $('.alert-out').on('click',function(){ confirm("ユーザー情報(質問,送信宛先等)を削除します。よろしいですか？") })
   });
   </script>
 
