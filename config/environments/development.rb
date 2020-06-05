@@ -64,13 +64,14 @@ Rails.application.configure do
   # host にはドメイン(host)が入る=> 開発環境なのでlocalhost のport番号が3000番
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  config.action_mailer.smtp_settings = {
+   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => Settings.service.email, #gmailアドレス
-    :password => Settings.service.password, #gmailパスワード
+    :user_name => ENV['GMAIL'], #gmailアドレス
+    :password => ENV['GMAIL_PASS'], #gmailパスワード
     :authentication => 'login'
- } 
+ }
+
 end
