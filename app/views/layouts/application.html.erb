@@ -27,7 +27,7 @@
               <%= link_to "ログアウト", destroy_user_session_path, { method: :delete, class: "sign-out-alt" } %>
             </div>
             <div class="menu-logout">
-              <%= link_to "退会", user_registration_path, { method: :delete, class: "sign-out-alt alert-out" } %>
+              <%= link_to "退会", user_registration_path, { method: :delete, data: { confirm: 'Are you sure?' }, class: "sign-out-alt alert-out" } %>
             </div>
           </div>
         <% end %>
@@ -41,10 +41,8 @@
 
   <script>
     $(function(){
-    $('.alert').fadeOut(3000);
-    
-    $('.alert-out').on('click',function(){ confirm("ユーザー情報(質問,送信宛先等)を削除します。よろしいですか？") })
-  });
+        $('.alert').fadeOut(3000);
+    });
   </script>
 
 </html>
